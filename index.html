@@ -23,33 +23,44 @@
 
 <body>
     <header>
-        <h1>Money Manage <span>Tracker</span></h1>
+        <h1 class="text-4xl font-bold text-center mt-4 mb-10	">Money Manage <span
+                class="font-extrabold text-blue-600		">Tracker</span></h1>
     </header>
-    <main>
+    <main class="grid grid-cols-2">
 
-        <section class="" id="side-image">
+        <section class="p-16 " id="side-image">
             <img src="images/moneyBank.png" alt="">
 
         </section>
-        <section class="">
+        <section class="text-center bg-slate-100 pt-12 pb-12">
             <!-- income and expenses section -->
-            <h3>Income</h3>
-            <input type="text">
-            <h3>Expenses</h3>
-            <input type="text">
+            <h3 class=" text-center text-xl font-bold pb-5">Income</h3>
+            <p class="font-medium	">Income: <input class="bg-gray-300 ml-2 py-1 px-4 rounded-sm" type="text"></p>
+            <h3 class="text-xl font-bold pt-4 pb-5">Expenses</h3>
+            <p class="font-medium	">Food: <input class="bg-gray-300 ml-2 py-1 px-4 rounded-sm" type="text"></p>
             <br><br>
-            <input type="text">
+            <p class="font-medium	">Rent: <input class="bg-gray-300 ml-2 py-1 px-4 rounded-sm" type="text"></p>
             <br><br>
-            <input type="text">
+            <p class="font-medium	">Cloths: <input class="bg-gray-300 ml-2 py-1 px-4 rounded-sm" type="text"></p>
             <br><br>
-            <button id="calc-btn" class="calc-btn">Calculate</button>
-            <h3>Total Expenses : <span>00</span></h3>
-            <h3>Balance: <span>00</span></h3>
+
+            <!-- button -->
+            <button id="calc-btn"
+                class="calc-btn bg-blue-600 py-2 px-8 mb-5 text-white	font-medium	rounded">Calculate</button>
+
+            <h3 class=" text-center text-xl font-bold pb-5">Total Expenses : <span>00</span></h3>
+            <h3 class=" text-center text-xl font-bold pb-5">Balance: <span>00</span></h3>
             <!-- save and remaining section -->
-            <input type="text" class="save-input">
-            <button id="save-btn" class="save-btn">Save</button>
-            <h3>Saving Amount: <span>00</span></h3>
-            <h3>Remainnig Balance: <span>00</span></h3>
+
+            <span class="font-medium">Save: </span><input type="text"
+                class="save-input bg-gray-300 ml-2 py-2 px-3 rounded-sm w-24		">
+
+            <span class="px-3 font-bold">%</span>
+
+            <button id="save-btn" class="save-btn bg-blue-600 py-2 px-8 rounded text-white font-medium">Save</button>
+
+            <h3 class="text-center text-xl font-bold pt-5 pb-3">Saving Amount: <span>00</span></h3>
+            <h3 class="text-center text-xl font-bold pb-5">Remainnig Balance: <span>00</span></h3>
 
 
         </section>
