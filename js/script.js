@@ -29,7 +29,14 @@ document.getElementById('save-btn').addEventListener('click', function () {
     const income2 = getInputValue('income-input');
     const expenses = expensesCalc();
     const updateBlcTotal = income2 - expenses;
-    const saveMoney = updateBlcTotal * saveInput;
-    saveInput.innerText = saveMoney;
-    console.log(saveMoney)
+    // save amount
+    const saveMoneyCalc = (updateBlcTotal / 100) * saveInput;
+    const savingAmount = document.getElementById('save-amount');
+    savingAmount.innerText = saveMoneyCalc;
+    // remainnig balance
+    const remainnigMoneyCalc = updateBlcTotal - saveMoneyCalc;
+    const remainnigBalance = document.getElementById('remainnig-balance');
+    remainnigBalance.innerText = remainnigMoneyCalc;
+    console.log('remainnigMoneyCalc -- ', remainnigMoneyCalc)
+
 });
