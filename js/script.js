@@ -17,11 +17,22 @@ document.getElementById('calc-btn').addEventListener('click', function () {
     const expenses = expensesCalc();
     //update total expenses
     const totalExpenses = document.getElementById('total-expenses');
-    totalExpenses.innerText = expenses;
     //update balance
     const UpdateBalanceTotal = income - expenses;
     const totalBalance = document.getElementById('total-balance');
-    totalBalance.innerText = UpdateBalanceTotal;
+    if (income <= 0) {
+        alert('Please enter valid number')
+    }
+    else if (expenses <= 0) {
+        alert('Please enter a valid number')
+    }
+    else if (income < expenses) {
+        alert("You can't spend more than your Income")
+    }
+    else {
+        totalExpenses.innerText = expenses;
+        totalBalance.innerText = UpdateBalanceTotal;
+    }
 })
 // save button
 document.getElementById('save-btn').addEventListener('click', function () {
@@ -30,13 +41,17 @@ document.getElementById('save-btn').addEventListener('click', function () {
     const expenses = expensesCalc();
     const updateBlcTotal = income2 - expenses;
     // save amount
-    const saveMoneyCalc = (updateBlcTotal / 100) * saveInput;
+    const saveMoneyCalc = (income2 / 100) * saveInput;
     const savingAmount = document.getElementById('save-amount');
-    savingAmount.innerText = saveMoneyCalc;
     // remainnig balance
     const remainnigMoneyCalc = updateBlcTotal - saveMoneyCalc;
     const remainnigBalance = document.getElementById('remainnig-balance');
-    remainnigBalance.innerText = remainnigMoneyCalc;
-    console.log('remainnigMoneyCalc -- ', remainnigMoneyCalc)
-
+    //saving related errors 
+    if (saveMoneyCalc > updateBlcTotal) {
+        alert("You can't save more than your current balance")
+    }
+    else {
+        savingAmount.innerText = saveMoneyCalc;
+        remainnigBalance.innerText = remainnigMoneyCalc;
+    }
 });
